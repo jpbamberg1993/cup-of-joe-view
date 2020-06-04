@@ -4,6 +4,7 @@ import { Provider, connect } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer'
+import configureStore from './store';
 
 import './index.css';
 import App from './App';
@@ -17,7 +18,7 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={configureStore()}>
     <App />
     </Provider>
   </React.StrictMode>,

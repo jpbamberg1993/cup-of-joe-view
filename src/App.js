@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
+import { getShops } from './actions/getShops'
+
+
 
 function App() {
   return (
@@ -23,4 +27,15 @@ function App() {
   );
 }
 
-export default App;
+
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = dispatch => ({
+  getShops: () => dispatch(getShops())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
