@@ -18,6 +18,7 @@ class App extends Component{
     this.props.getShops();
   }
 
+
 render(){
   return (
     <div className="App">
@@ -47,8 +48,6 @@ render(){
   );
 }
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
