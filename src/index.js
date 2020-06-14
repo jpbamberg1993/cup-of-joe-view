@@ -1,28 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider, connect } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers/rootReducer'
-import configureStore from './store';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider, connect } from "react-redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "./reducers/rootReducer";
+import configureStore from "./store";
 
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunk)
-);
-
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
