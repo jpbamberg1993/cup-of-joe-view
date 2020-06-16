@@ -1,8 +1,8 @@
-import { GET_SHOPS } from '.actions//types';
+import { GET_COFFEE } from '.actions//types';
 
 export default (state = {}, action) => {
 	switch (action.type) {
-		case GET_SHOPS:
+		case GET_COFFEE:
 			return {
 				result: [],
 			};
