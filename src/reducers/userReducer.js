@@ -1,8 +1,8 @@
-import { GET_SHOPS } from '.actions/types';
+import { GET_USERS } from '.actions/types';
 
 export default (state = {}, action) => {
 	switch (action.type) {
-		case GET_SHOPS:
+		case GET_USERS:
 			return {
 				result: [],
 			};

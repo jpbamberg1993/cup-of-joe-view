@@ -1,8 +1,8 @@
-import { GET_SHOPS } from './types'
+import { GET_SHOPS } from './types';
 
 export const getShops = () => (dispatch) => {
-  dispatch({
-    type: GET_SHOPS,
-    payload: "insert array of shops here",
-  });
+	dispatch({
+		type: GET_SHOPS,
+		shops: [],
+	});
 };

@@ -1,4 +1,4 @@
-import { GET_COFFEE } from '.actions//types';
+import { GET_COFFEE } from '.actions/types';
 
 export default (state = {}, action) => {
 	switch (action.type) {
