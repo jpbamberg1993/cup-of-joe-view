@@ -1,10 +1,14 @@
 import { GET_COFFEE } from '../actions/types';
 
-export default (state = {}, action) => {
+const initialState = {
+  coffee : []
+};
+
+export default (state = initialState, action) => {
 	switch (action.type) {
 		case GET_COFFEE:
 			return {
-				result: [],
+				coffee: [...state.coffee,action.coffee],
 			};
 		default:
 			return state;

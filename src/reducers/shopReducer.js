@@ -4,7 +4,7 @@ export default (state = {}, action) => {
 	switch (action.type) {
 		case GET_SHOPS:
 			return {
-				result: [],
+				shops: [...state,action.shops],
 			};
 		default:
 			return state;
