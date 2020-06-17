@@ -1,15 +1,15 @@
-import { GET_SHOPS } from '../actions/types';
+import * as types from '../actions/types';
 
 const initialState = {
-  shops: []
-}
+	shops: [],
+};
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case GET_SHOPS:
-			return {
-				shops: [...state.shops,action.shops],
-			};
+		case types.GET_SHOPS:
+			return Object.assign({}, state, { shops: action.shop });
+		case types.ADD_SHOP:
+			return Object.assign({}, state, { shops: [...state.shop, action.shop] });
 		default:
 			return state;
 	}

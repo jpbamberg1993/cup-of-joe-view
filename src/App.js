@@ -27,7 +27,7 @@ class App extends Component {
 
 					<pre>{JSON.stringify(this.props)}</pre>
 
-					<button onClick={this.getShops}> Test redux action </button>
+					<button onClick={this.getShops}> Test a shop redux action </button>
 					<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
 						_cuppa_jo_
 					</a>
