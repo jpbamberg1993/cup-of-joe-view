@@ -1,10 +1,14 @@
 import { GET_USERS } from '../actions/types';
 
-export default (state = {}, action) => {
+const initialState = {
+  users: []
+}
+
+export default (state = initialState, action) => {
 	switch (action.type) {
 		case GET_USERS:
 			return {
-				result: [],
+				users: [...state.users,action.user],
 			};
 		default:
 			return state;
