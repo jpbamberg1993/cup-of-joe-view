@@ -9,6 +9,14 @@ export const getShops = (shops) => {
 	return action;
 };
 
+export const addShops = (shops) => {
+	const action = {
+		type: types.ADD_SHOP,
+		shops,
+	};
+	return action;
+};
+
 export const fetchShops = () => {
 	return async function thunk(dispatch) {
 		const res = await axios.get('/whatistheroutetogetallshops');

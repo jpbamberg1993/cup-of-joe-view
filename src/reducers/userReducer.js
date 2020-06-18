@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
 	switch (action.type) {
 		case types.GET_USERS:
 			return Object.assign({}, state, { users: action.user });
-		case types.ADD_SHOP:
+		case types.ADD_USER:
 			return Object.assign({}, state, { users: [...state.user, action.user] });
 		default:
 			return state;

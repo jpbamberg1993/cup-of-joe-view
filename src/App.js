@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getShops } from './actions/getShops';
+import { addShops } from './actions/getShops';
 import './App.css';
 
-const mapDispatchToProps = (dispatch) => ({
-	getShops: () => dispatch(getShops()),
-});
+const mapDispatchToProps = (dispatch) => {
+	return ({
+		addShops: (shop) => dispatch(addShops(shop)),
+	});
+};
 
 const mapStateToProps = (state) => ({
 	...state,
 });
 
 class App extends Component {
-	getShops = (event) => {
-		this.props.getShops();
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			input: 'testing',
+		};
+		this.shopSending = this.shopSending.bind(this)
+		this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+	}
+
+	shopSending = (event) => {
+		event.preventDefault();
+		this.props.addShops(this.state.input);
+		this.setState({
+			input: ''
+		})
 	};
 
 	render() {
@@ -26,8 +48,12 @@ class App extends Component {
 					</p>
 
 					<pre>{JSON.stringify(this.props)}</pre>
-
-					<button onClick={this.getShops}> Test a shop redux action </button>
+					<input
+					type="text"
+					onChange={this.handleChange}
+					value={this.state.input} />
+					<br />
+					<button onClick={this.shopSending}> Test a shop redux action </button>
 					<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
 						_cuppa_jo_
 					</a>
