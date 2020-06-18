@@ -1,7 +1,7 @@
 import * as types from '../actions/types';
 
 const initialState = {
-	shops: ['default'],
+	shops: [],
 };
 
 export default (state = initialState, action) => {
