@@ -17,6 +17,20 @@ export const addShops = (shops) => {
 	return action;
 };
 
+//scaffolding until we link up front & back end
+export const mockAsyncFetchShops = () => {
+	return function (dispatch) {
+		setTimeout(function () {
+			let mockData = {
+				shops: ['shop1', 'shop2', 'shop3'],
+			};
+      const actionWithMockData = getShops(mockData)
+      dispatch(actionWithMockData)
+    }, 1500);
+	};
+};
+
+//for future use
 export const fetchShops = () => {
 	return async function thunk(dispatch) {
 		const res = await axios.get('/whatistheroutetogetallshops');

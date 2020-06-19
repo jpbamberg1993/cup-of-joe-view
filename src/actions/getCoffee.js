@@ -9,6 +9,21 @@ export const getCoffee = (coffee) => {
 	return action;
 };
 
+//scaffolding until we link up front & back end
+export const mockAsyncFetchCoffee = () => {
+	return function (dispatch) {
+		setTimeout(function () {
+			let mockData = {
+				shops: ['coffee1', 'coffee2', 'coffee3'],
+			};
+      const actionWithMockData = getCoffee(mockData)
+      dispatch(actionWithMockData)
+    }, 1500);
+	};
+};
+
+
+//for future use
 export const fetchShops = () => {
 	return async function thunk(dispatch) {
 		const res = await axios.get('/whatistheroutetogetallcoffee');
