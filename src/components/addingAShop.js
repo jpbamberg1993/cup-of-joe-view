@@ -21,13 +21,13 @@ class AddingAShop extends react.Component {
 		});
 	}
 
-	shopSending = (event) => {
+	shopSending(event) {
 		event.preventDefault();
 		this.props.addShops(this.state.input);
 		this.setState({
 			input: '',
 		});
-	};
+	}
 
 	render() {
 		return (

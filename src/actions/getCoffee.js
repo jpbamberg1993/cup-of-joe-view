@@ -16,17 +16,16 @@ export const mockAsyncFetchCoffee = () => {
 			let mockData = {
 				shops: ['coffee1', 'coffee2', 'coffee3'],
 			};
-      const actionWithMockData = getCoffee(mockData)
-      dispatch(actionWithMockData)
-    }, 1500);
+			const actionWithMockData = getCoffee(mockData);
+			dispatch(actionWithMockData);
+		}, 1500);
 	};
 };
-
 
 //for future use
 export const fetchShops = () => {
 	return async function thunk(dispatch) {
-		const res = await axios.get('/whatistheroutetogetallcoffee');
+		const res = await axios.get('/shop/:shop_id/coffee');
 		const allCoffee = res.data;
 		const actionWithData = getCoffee(allCoffee);
 		dispatch(actionWithData);
