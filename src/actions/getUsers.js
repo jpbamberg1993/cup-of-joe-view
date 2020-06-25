@@ -1,5 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
+import mocking from './mockdata.js';
 
 export const getUsers = (users) => {
 	const action = {
@@ -13,9 +14,9 @@ export const getUsers = (users) => {
 export const mockAsyncFetchUsers = () => {
 	return function (dispatch) {
 		setTimeout(function () {
-			let mockData = {
-				shops: ['user1', 'user2', 'user3'],
-			};
+			let mockData ={
+				users: mocking.users,
+			}
 			const actionWithMockData = getUsers(mockData);
 			dispatch(actionWithMockData);
 		}, 1500);

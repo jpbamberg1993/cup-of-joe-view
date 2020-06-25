@@ -1,5 +1,6 @@
 import * as types from './types';
 import axios from 'axios';
+import mocking from './mockdata.js';
 
 export const getShops = (shops) => {
 	const action = {
@@ -22,7 +23,7 @@ export const mockAsyncFetchShops = () => {
 	return function (dispatch) {
 		setTimeout(function () {
 			let mockData = {
-				shops: ['shop1', 'shop2', 'shop3'],
+				shops: mocking.shops,
 			};
 			const actionWithMockData = getShops(mockData);
 			dispatch(actionWithMockData);

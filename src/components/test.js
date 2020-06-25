@@ -8,7 +8,7 @@ const Test = () => {
 			<ol>
 				<li>More modular components</li>
 				<li>Mock calls to api - wire up a data flow</li>
-				<li>More Redux scaffolding/funcitonality</li>
+				<li>More Redux scaffolding/functionality</li>
 				<li>Testing</li>
 			</ol>
 			<p>But not necesarily in that order</p>
