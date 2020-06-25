@@ -4,7 +4,8 @@ const initialState = {
 	coffee: [],
 };
 
-export default (state = initialState, action) => {
+
+export default (state = initialState, action ) => {
 	switch (action.type) {
 		case types.GET_COFFEE:
 			return Object.assign({}, state, { coffee: action.coffee });
