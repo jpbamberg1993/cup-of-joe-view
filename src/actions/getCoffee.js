@@ -5,7 +5,7 @@ import mocking from './mockdata.js';
 export const getCoffee = (coffee) => {
 	const action = {
 		type: types.GET_COFFEE,
-		coffee,
+		coffee
 	};
 	return action;
 };
@@ -15,7 +15,7 @@ export const mockAsyncFetchCoffee = () => {
 	return function (dispatch) {
 		setTimeout(function () {
 			let mockData = {
-				coffee: mocking.coffee,
+				coffee: mocking.coffee
 			};
 			const actionWithMockData = getCoffee(mockData);
 			dispatch(actionWithMockData);

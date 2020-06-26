@@ -5,7 +5,7 @@ import mocking from './mockdata.js';
 export const getUsers = (users) => {
 	const action = {
 		type: types.GET_USERS,
-		users,
+		users
 	};
 	return action;
 };
@@ -15,7 +15,7 @@ export const mockAsyncFetchUsers = () => {
 	return function (dispatch) {
 		setTimeout(function () {
 			let mockData ={
-				users: mocking.users,
+				users: mocking.users
 			}
 			const actionWithMockData = getUsers(mockData);
 			dispatch(actionWithMockData);

@@ -13,7 +13,7 @@ export const getShops = (shops) => {
 export const addShops = (shops) => {
 	const action = {
 		type: types.ADD_SHOP,
-		shops,
+		shops
 	};
 	return action;
 };
@@ -23,7 +23,7 @@ export const mockAsyncFetchShops = () => {
 	return function (dispatch) {
 		setTimeout(function () {
 			let mockData = {
-				shops: mocking.shops,
+				shops: mocking.shops
 			};
 			const actionWithMockData = getShops(mockData);
 			dispatch(actionWithMockData);
