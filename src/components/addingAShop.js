@@ -1,6 +1,6 @@
 import React, * as react from 'react';
 import { connect } from 'react-redux';
-import { addShops } from '../actions/addShops';
+import { mockAsyncAddShops } from '../actions/addShops';
 import '../App.css';
 
 class AddingAShop extends react.Component {
@@ -23,16 +23,18 @@ class AddingAShop extends react.Component {
 
 	shopSending(event) {
 		event.preventDefault();
-		this.props.addShops(this.state.input);
+		this.props.mockAsyncAddShops(this.state.input);
 		this.setState({
 			input: '',
 		});
 	}
 
 	render() {
+		console.log(this.props)
 		return (
 			<div>
-				<pre>{JSON.stringify(this.props)}</pre>
+				<code>{JSON.stringify(this.props.shopReducer)}</code>
+				<br />
 				<input type="text" onChange={this.handleChange} value={this.state.input} />
 				<br />
 				<button onClick={this.shopSending}> Test a shop redux action </button>
@@ -43,7 +45,7 @@ class AddingAShop extends react.Component {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addShops: (shop) => dispatch(addShops(shop)),
+		mockAsyncAddShops: (shop) => dispatch(mockAsyncAddShops(shop)),
 	};
 };
 
