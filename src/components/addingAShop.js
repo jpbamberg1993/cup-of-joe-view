@@ -30,7 +30,7 @@ class AddingAShop extends react.Component {
 	}
 
 	render() {
-		console.log(this.props)
+		console.log(this.props);
 		return (
 			<div>
 				<code>{JSON.stringify(this.props.shopReducer)}</code>
@@ -43,11 +43,9 @@ class AddingAShop extends react.Component {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		mockAsyncAddShops: (shop) => dispatch(mockAsyncAddShops(shop)),
-	};
-};
+const mapDispatchToProps = (dispatch) => ({
+	mockAsyncAddShops: (shop) => dispatch(mockAsyncAddShops(shop)),
+});
 
 const mapStateToProps = (state) => ({
 	...state,

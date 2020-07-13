@@ -12,7 +12,7 @@ export const getUsers = (users) => {
 };
 
 // scaffolding until we link up front & back end
-export const mockAsyncFetchUsers = () => function (dispatch) {
+export const mockAsyncFetchUsers = () => (dispatch) => {
   setTimeout(() => {
     const mockData = {
       users: mocking.users,
@@ -23,7 +23,7 @@ export const mockAsyncFetchUsers = () => function (dispatch) {
 };
 
 // for future use
-export const fetchUsers = () => async function thunk(dispatch) {
+export const fetchUsers = () => async (dispatch) => {
   const res = await axios.get('/users');
   const allUsers = res.data;
   const actionWithData = getUsers(allUsers);

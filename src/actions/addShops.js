@@ -10,13 +10,12 @@ export const addShops = (shops) => {
 
 // scaffolding until we link up front & back
 
-export const mockAsyncAddShops = (shop) => {
-  // eslint-disable-next-line func-names
-  return function (dispatch) {
-    // mock adding to db
-    setTimeout(() => {
-      const actionWithMockData = addShops(shop);
-      dispatch(actionWithMockData);
-    }, 1000);
-  };
+export const mockAsyncAddShops = (shop) => async (dispatch) => {
+  // mock adding to db
+  setTimeout(() => {
+    const actionWithMockData = addShops(shop);
+    dispatch(actionWithMockData);
+  }, 1000);
 };
+
+
